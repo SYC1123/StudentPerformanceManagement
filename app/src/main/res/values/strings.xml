@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">StudentPerformanceManagement</string>
+    <string name="title_activity_student">StudentActivity</string>
+    <string name="title_grade">成绩</string>
+    <string name="title_course">课程</string>
+    <string name="title_student">个人</string>
+    <string name="title_activity_teacher">TeacherActivity</string>
+    <string name="title_inputgrade">录分</string>
+    <string name="title_teachercourse">课表</string>
+    <string name="title_teacher">个人</string>
+    <string name="title_activity_dept">DeptActivity</string>
+    <string name="title_home">改分</string>
+    <string name="title_dashboard">改课</string>
+    <string name="title_notifications">个人</string>
+</resources>
