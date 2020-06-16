@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CourseActivity">
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/school" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="332dp"
+        android:layout_height="494dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/shape1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15">
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="课程"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="课号："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+        <EditText
+            android:id="@+id/course_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/textView40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView40"
+            app:layout_constraintTop_toTopOf="@+id/textView40" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="课程名："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView40" />
+
+        <EditText
+            android:id="@+id/course_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView41"
+            app:layout_constraintEnd_toEndOf="@+id/course_id"
+            app:layout_constraintStart_toStartOf="@+id/course_id"
+            app:layout_constraintTop_toTopOf="@+id/textView41" />
+
+        <TextView
+            android:id="@+id/textView42"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="学分："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView41" />
+
+        <EditText
+            android:id="@+id/course_credit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/textView42"
+            app:layout_constraintEnd_toEndOf="@+id/course_name"
+            app:layout_constraintStart_toStartOf="@+id/course_name"
+            app:layout_constraintTop_toTopOf="@+id/textView42" />
+
+        <Switch
+            android:id="@+id/course_nature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="是否必修课"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/course_credit" />
+
+        <TextView
+            android:id="@+id/textView43"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="上课地："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/course_nature" />
+
+        <EditText
+            android:id="@+id/course_place"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toBottomOf="@+id/textView43"
+            app:layout_constraintEnd_toEndOf="@+id/course_credit"
+            app:layout_constraintStart_toStartOf="@+id/course_credit"
+            app:layout_constraintTop_toTopOf="@+id/textView43" />
+
+        <TextView
+            android:id="@+id/textView44"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="人数："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView43" />
+
+        <EditText
+            android:id="@+id/course_capacity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="9dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/textView44"
+            app:layout_constraintEnd_toEndOf="@+id/course_place"
+            app:layout_constraintStart_toStartOf="@+id/course_place"
+            app:layout_constraintTop_toTopOf="@+id/textView44" />
+
+        <TextView
+            android:id="@+id/textView45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="学时："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView44" />
+
+        <EditText
+            android:id="@+id/course_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/textView45"
+            app:layout_constraintEnd_toEndOf="@+id/course_capacity"
+            app:layout_constraintStart_toStartOf="@+id/course_capacity"
+            app:layout_constraintTop_toTopOf="@+id/textView45" />
+
+        <Button
+            android:id="@+id/sure"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:text="确认"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

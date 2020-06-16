@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.changescore.ChangeScoreFragment">
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/school"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="308dp"
+        android:layout_height="489dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14">
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="成绩修改"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView31"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="学号："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <EditText
+            android:id="@+id/stuid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/textView31"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView31"
+            app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+        <TextView
+            android:id="@+id/textView33"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="课号："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+        <EditText
+            android:id="@+id/courseid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/textView33"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView33"
+            app:layout_constraintTop_toTopOf="@+id/textView33" />
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:text="成绩："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+        <EditText
+            android:id="@+id/score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:inputType="number"
+            app:layout_constraintBottom_toBottomOf="@+id/textView34"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView34"
+            app:layout_constraintTop_toTopOf="@+id/textView34" />
+
+        <Button
+            android:id="@+id/sure"
+            android:layout_width="146dp"
+            android:layout_height="47dp"
+            android:layout_marginBottom="16dp"
+            android:text="确认"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

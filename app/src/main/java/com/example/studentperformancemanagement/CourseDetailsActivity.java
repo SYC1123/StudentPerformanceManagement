@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,6 +29,10 @@ public class CourseDetailsActivity extends AppCompatActivity {
         bindViews();
         Intent intent=getIntent();
         String name=intent.getStringExtra("name");
+        boolean flag=intent.getBooleanExtra("flag",false);
+        if(flag){
+            mReservation.setVisibility(View.INVISIBLE);
+        }
         Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
     }
     private void bindViews() {

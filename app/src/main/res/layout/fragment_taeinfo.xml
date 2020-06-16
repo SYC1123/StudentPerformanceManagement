@@ -6,17 +6,162 @@
     android:layout_height="match_parent"
     tools:context=".ui.teainfo.TeaInfoFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/school"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="425dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/shape1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+
+        <TextView
+            android:id="@+id/teaname"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="丁大勇"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/exitsys"
+            android:layout_width="181dp"
+            android:layout_height="41dp"
+            android:layout_marginBottom="8dp"
+            android:background="@android:color/holo_blue_light"
+            android:text="退出登录"
+            android:textColor="@color/cardview_light_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="104dp"
+            android:layout_marginTop="16dp"
+            android:text="性别："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/teaname" />
+
+        <TextView
+            android:id="@+id/teasex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="男"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintStart_toEndOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="@+id/textView8"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="教工号："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/teaid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1234"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="@+id/teasex"
+            app:layout_constraintStart_toStartOf="@+id/teasex"
+            app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="学院："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView10"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <TextView
+            android:id="@+id/teacollege"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="软件学院"
+            android:textColor="#FFC107"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView14"
+            app:layout_constraintEnd_toEndOf="@+id/teaid"
+            app:layout_constraintStart_toStartOf="@+id/teaid"
+            app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="专业："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textView14"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+        <TextView
+            android:id="@+id/teamajor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="软件工程"
+            android:textColor="#FFC107"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView18"
+            app:layout_constraintEnd_toEndOf="@+id/teacollege"
+            app:layout_constraintStart_toStartOf="@+id/teacollege"
+            app:layout_constraintTop_toTopOf="@+id/textView18" />
+
+        <ImageView
+            android:id="@+id/set"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/set"
+            app:layout_constraintBottom_toBottomOf="@+id/exitsys"
+            app:layout_constraintStart_toEndOf="@+id/exitsys"
+            app:layout_constraintTop_toTopOf="@+id/exitsys" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

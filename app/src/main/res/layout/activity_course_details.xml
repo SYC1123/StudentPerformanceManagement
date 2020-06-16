@@ -137,7 +137,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="前导课号："
+        android:text="课时："
         app:layout_constraintBottom_toBottomOf="@+id/imageView5"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="@+id/imageView5" />
@@ -267,4 +267,62 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="@+id/capacity"
         app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/ic_notifications_black_24dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="授课教师："
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintStart_toEndOf="@+id/imageView9"
+        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+
+    <TextView
+        android:id="@+id/teaname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="丁大勇"
+        app:layout_constraintBottom_toBottomOf="@+id/textView6"
+        app:layout_constraintEnd_toEndOf="@+id/remain"
+        app:layout_constraintTop_toTopOf="@+id/textView6" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView9"
+        app:srcCompat="@drawable/ic_notifications_black_24dp" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="上课地点："
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintStart_toEndOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView16" />
+
+    <TextView
+        android:id="@+id/place"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="四号楼"
+        app:layout_constraintBottom_toBottomOf="@+id/textView38"
+        app:layout_constraintEnd_toEndOf="@+id/teaname"
+        app:layout_constraintTop_toTopOf="@+id/textView38" />
 </androidx.constraintlayout.widget.ConstraintLayout>

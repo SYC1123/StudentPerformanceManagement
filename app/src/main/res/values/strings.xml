@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">StudentPerformanceManagement</string>
+    <string name="app_name">学生成绩管理系统</string>
     <string name="title_activity_student">StudentActivity</string>
     <string name="title_grade">成绩</string>
     <string name="title_course">课程</string>

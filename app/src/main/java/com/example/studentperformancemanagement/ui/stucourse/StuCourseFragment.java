@@ -14,13 +14,13 @@ import androidx.fragment.app.Fragment;
 import com.example.studentperformancemanagement.CourseDetailsActivity;
 import com.example.studentperformancemanagement.R;
 import com.example.studentperformancemanagement.adapter.CourseAdapter;
-import com.example.studentperformancemanagement.classes.CourseItem;
+import com.example.studentperformancemanagement.classes.Course;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StuCourseFragment extends Fragment {
-    private List<CourseItem> itemArrayList = new ArrayList<>();
+    private List<Course> itemArrayList = new ArrayList<>();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -34,9 +34,9 @@ public class StuCourseFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                CourseItem courseItem=itemArrayList.get(position);
+                Course course =itemArrayList.get(position);
                 Intent intent=new Intent(getContext(), CourseDetailsActivity.class);
-                intent.putExtra("name",courseItem.getName());
+                intent.putExtra("name", course.getCourse_name());
                 startActivity(intent);
             }
         });
@@ -44,11 +44,11 @@ public class StuCourseFragment extends Fragment {
     }
     private void initfruit() {
         for (int i = 0; i < 10; i++) {
-            CourseItem fruit = new CourseItem("aaa", R.drawable.course,3);
+            Course fruit = new Course("aaa", R.drawable.course,3);
             itemArrayList.add(fruit);
-            CourseItem fruit1 = new CourseItem("bbb",  R.drawable.course,4);
+            Course fruit1 = new Course("bbb",  R.drawable.course,4);
             itemArrayList.add(fruit1);
-            CourseItem fruit2 = new CourseItem("ccc",  R.drawable.course,5);
+            Course fruit2 = new Course("ccc",  R.drawable.course,5);
             itemArrayList.add(fruit2);
         }
     }

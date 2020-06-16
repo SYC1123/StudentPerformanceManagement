@@ -164,5 +164,16 @@
             app:layout_constraintStart_toStartOf="@+id/college"
             app:layout_constraintTop_toTopOf="@+id/textView3" />
 
+        <ImageView
+            android:id="@+id/set"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/set"
+            app:layout_constraintBottom_toBottomOf="@+id/exitsys"
+            app:layout_constraintStart_toEndOf="@+id/exitsys"
+            app:layout_constraintTop_toTopOf="@+id/exitsys"
+            app:layout_constraintVertical_bias="0.434" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

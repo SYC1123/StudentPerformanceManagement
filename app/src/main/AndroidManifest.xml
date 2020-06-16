@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".CourseActivity"></activity>
+        <activity android:name=".SetInfoActivity" />
+        <activity android:name=".InputStuScoreActivity" />
+        <activity android:name=".InputScoreActivity" />
+        <activity android:name=".SetScoreRatioActivity" />
         <activity
             android:name=".DeptActivity"
-            android:label="@string/title_activity_dept"></activity>
+            android:label="@string/title_activity_dept" />
         <activity
             android:name=".TeacherActivity"
             android:label="@string/title_activity_teacher" />

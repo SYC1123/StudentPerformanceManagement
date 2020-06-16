@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.deptinfo.DeptInfoFragment">
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/school"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="318dp"
+        android:layout_height="496dp"
+        android:background="@drawable/shape1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView17">
+
+        <TextView
+            android:id="@+id/textView46"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="教务处"
+            android:textAlignment="center"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView47"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="28dp"
+            android:text="教务号："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+        <TextView
+            android:id="@+id/officeid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="12345"
+            android:textColor="@android:color/holo_orange_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView47"
+            app:layout_constraintStart_toEndOf="@+id/textView47"
+            app:layout_constraintTop_toTopOf="@+id/textView47" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="学院："
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textView47"
+            app:layout_constraintStart_toStartOf="@+id/textView47"
+            app:layout_constraintTop_toBottomOf="@+id/textView47" />
+
+        <TextView
+            android:id="@+id/officecollege"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
+            android:text="软件学院"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView49"
+            app:layout_constraintEnd_toEndOf="@+id/officeid"
+            app:layout_constraintStart_toStartOf="@+id/officeid"
+            app:layout_constraintTop_toTopOf="@+id/textView49" />
+
+        <Button
+            android:id="@+id/exit"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:text="退出"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="24dp"
+            android:ems="10"
+            android:hint="输入修改密码点击→"
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/exit"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/changepassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/set"
+            app:layout_constraintBottom_toBottomOf="@+id/password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/password"
+            app:layout_constraintTop_toTopOf="@+id/password" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
