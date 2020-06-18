@@ -12,6 +12,20 @@ public class Student implements Serializable {
     private String student_collegename;//学院
     private String major_id;//专业号
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "student_id='" + student_id + '\'' +
+                ", student_name='" + student_name + '\'' +
+                ", student_password='" + student_password + '\'' +
+                ", student_tel='" + student_tel + '\'' +
+                ", student_sex='" + student_sex + '\'' +
+                ", student_grade=" + student_grade +
+                ", student_collegename='" + student_collegename + '\'' +
+                ", major_id='" + major_id + '\'' +
+                '}';
+    }
+
     public Student(String student_id, String student_name) {
         this.student_id = student_id;
         this.student_name = student_name;

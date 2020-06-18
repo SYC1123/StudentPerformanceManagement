@@ -3,6 +3,7 @@ package com.example.studentperformancemanagement.ui.stuinfo;
 import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +18,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.studentperformancemanagement.Helper.SaveStudentHelper;
+import com.example.studentperformancemanagement.LoginActivity;
 import com.example.studentperformancemanagement.R;
 import com.example.studentperformancemanagement.SetInfoActivity;
+import com.example.studentperformancemanagement.classes.Student;
 
 public class StuInfoFragment extends Fragment {
 
@@ -26,7 +30,7 @@ public class StuInfoFragment extends Fragment {
     private Button mExitsys;
     private TextView mCollege;
     private TextView mSex;
-    private TextView mMajor;
+    private TextView mMajor,mTel;
     private ImageView mSet;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,11 +42,27 @@ public class StuInfoFragment extends Fragment {
         mSex = (TextView) root.findViewById(R.id.sex);
         mMajor = (TextView) root.findViewById(R.id.major);
         mSet = (ImageView) root.findViewById(R.id.set);
+        mTel=root.findViewById(R.id.tel);
+        Student student=SaveStudentHelper.getUser(getContext(),"data","stuuser");
+        mStuname.setText(student.getStudent_name());
+        mCollege.setText(student.getStudent_collegename());
+        mSex.setText(student.getStudent_sex());
+        mMajor.setText(student.getMajor_id());
+        mTel.setText(student.getStudent_tel());
         mSet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(getContext(), SetInfoActivity.class);
                 startActivity(intent);
+            }
+        });
+        mExitsys.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SaveStudentHelper.saveNotlogin(getContext(),"data","stuislogin");
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivity(intent);
+                getActivity().finish();
             }
         });
         return root;

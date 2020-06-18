@@ -60,7 +60,7 @@ public class StuGradeFragment extends Fragment {
                 //获取我们所选中的内容
                 String s = parent.getItemAtPosition(position).toString();
                 //弹一个吐司提示我们所选中的内容
-                Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
             }
             //只有当patent中的资源没有时，调用此方法
             @Override

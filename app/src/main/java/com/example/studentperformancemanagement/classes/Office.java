@@ -1,6 +1,8 @@
 package com.example.studentperformancemanagement.classes;
 
-public class Office {
+import java.io.Serializable;
+
+public class Office implements Serializable {
     private String office_id;//教工号
     private String office_password;//密码
     private String office_collegename;//学院名

@@ -1,6 +1,8 @@
 package com.example.studentperformancemanagement.classes;
 
-public class Teacher {
+import java.io.Serializable;
+
+public class Teacher implements Serializable {
     private String teacher_id;//教工号
     private String teacher_name;//姓名
     private String teacher_password;//密码

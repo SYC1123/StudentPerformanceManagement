@@ -10,6 +10,7 @@ public class Course {
     private int course_capacity;//课程容量
     private int course_restCapacity;//剩余数量
     private int coure_time;//学时
+    private int course_grade;//开课学年
 
     public Course(String course_name, int imageId, int course_credit) {
         this.imageId = imageId;
