@@ -37,7 +37,7 @@ public class CourseAdapter extends ArrayAdapter<Course> {
         ImageView courseImage = (ImageView) view.findViewById(R.id.course_image);
         TextView courseName = (TextView) view.findViewById(R.id.grade_name);
         TextView courseScore=view.findViewById(R.id.grade_score);
-        courseImage.setImageResource(item.getImageId());
+//        courseImage.setImageResource(item.getImageId());
         courseName.setText(item.getCourse_name());
         courseScore.setText("学分:"+item.getCourse_credit());
         return view;

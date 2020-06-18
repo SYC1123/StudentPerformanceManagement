@@ -5,13 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.studentperformancemanagement.R;
 import com.example.studentperformancemanagement.classes.GradeItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class GradeAdapter extends ArrayAdapter<GradeItem> {
@@ -37,8 +35,14 @@ public class GradeAdapter extends ArrayAdapter<GradeItem> {
         TextView courseScore=view.findViewById(R.id.grade_score);
         TextView courseGrade=view.findViewById(R.id.grade);
         courseName.setText(item.getName());
-        courseScore.setText("学分:"+item.getScore());
-        courseGrade.setText("成绩:"+item.getGrade());
+        courseScore.setText("学分:"+item.getCredit());
+        if (item.getGrade()<60){
+            courseGrade.setText("成绩:"+item.getGrade());
+            courseGrade.setTextColor(getContext().getResources().getColor(R.color.red));
+        }else {
+            courseGrade.setText("成绩:"+item.getGrade());
+        }
+
         return view;
     }
 

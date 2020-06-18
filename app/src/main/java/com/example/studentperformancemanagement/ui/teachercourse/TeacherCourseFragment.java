@@ -26,7 +26,7 @@ public class TeacherCourseFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_teachercourse, container, false);
-        initfruit();
+//        initfruit();
 //        CourseAdapter courseAdapter = new CourseAdapter(getContext(), R.layout.course_item, itemArrayList);
         CourseAdapter adapter=new CourseAdapter(getContext(),R.layout.course_item,itemArrayList);
         ListView listView = root.findViewById(R.id.teacourselist);
@@ -43,14 +43,14 @@ public class TeacherCourseFragment extends Fragment {
         });
         return root;
     }
-    private void initfruit() {
-        for (int i = 0; i < 10; i++) {
-            Course fruit = new Course("aaa", R.drawable.course,3);
-            itemArrayList.add(fruit);
-            Course fruit1 = new Course("bbb",  R.drawable.course,4);
-            itemArrayList.add(fruit1);
-            Course fruit2 = new Course("ccc",  R.drawable.course,5);
-            itemArrayList.add(fruit2);
-        }
-    }
+//    private void initfruit() {
+//        for (int i = 0; i < 10; i++) {
+//            Course fruit = new Course("aaa", R.drawable.course,3);
+//            itemArrayList.add(fruit);
+//            Course fruit1 = new Course("bbb",  R.drawable.course,4);
+//            itemArrayList.add(fruit1);
+//            Course fruit2 = new Course("ccc",  R.drawable.course,5);
+//            itemArrayList.add(fruit2);
+//        }
+//    }
 }

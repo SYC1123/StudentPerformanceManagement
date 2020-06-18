@@ -1,21 +1,21 @@
 package com.example.studentperformancemanagement.classes;
 
 public class GradeItem {
-    private int grade;
-    private String name;
-    private int score;
+    private double grade;//成绩
+    private String name;//课名
+    private String credit;//学分
 
-    public GradeItem(String name, int score, int grade) {
+    public GradeItem(String name, String credit, double grade) {
         this.grade = grade;
         this.name = name;
-        this.score = score;
+        this.credit = credit;
     }
 
-    public int getScore() {
-        return score;
+    public String getCredit() {
+        return credit;
     }
 
-    public int getGrade() {
+    public double getGrade() {
         return grade;
     }
 
@@ -23,7 +23,7 @@ public class GradeItem {
         return name;
     }
 
-    public void setGrade(int grade) {
+    public void setGrade(double grade) {
         this.grade = grade;
     }
 
@@ -31,7 +31,7 @@ public class GradeItem {
         this.name = name;
     }
 
-    public void setScore(int score) {
-        this.score = score;
+    public void setCredit(String credit) {
+        this.credit = credit;
     }
 }

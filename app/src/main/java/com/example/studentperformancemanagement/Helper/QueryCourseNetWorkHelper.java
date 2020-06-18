@@ -4,10 +4,10 @@ import android.os.Handler;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import com.example.studentperformancemanagement.Interface.ISetStuInfo;
-import com.example.studentperformancemanagement.Interface.ISetTeaInfo;
+import com.example.studentperformancemanagement.Interface.IQueryCourse;
+import com.example.studentperformancemanagement.Interface.IQueryCourseGrade;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,26 +15,29 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
-public class ChangeTeaInfoNetWorkHelper {
+public class QueryCourseNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 
-    private ISetTeaInfo callback;
+    private IQueryCourse callback;
 
-    private AppCompatActivity mContent;
+    private Fragment mContent;
 
-    public ChangeTeaInfoNetWorkHelper(AppCompatActivity appCompatActivity) {
+    public QueryCourseNetWorkHelper(Fragment appCompatActivity) {
         this.mContent = appCompatActivity;
     }
 
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
-            callback.teaSucceed(msg.obj.toString());
+            callback.onSucceed(msg.obj.toString());
         }
     };
 
-    public void startNetThread(final String host, final int port, final String data, ISetTeaInfo myCallback) {
-        this.callback = myCallback;
+    public void setCallback(IQueryCourse callback) {
+        this.callback = callback;
+    }
+
+    public void startNetThread(final String host, final int port, final String data) {
         Thread thread = new Thread() {
             @Override
             public void run() {

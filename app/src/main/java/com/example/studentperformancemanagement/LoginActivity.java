@@ -125,18 +125,20 @@ public class LoginActivity extends AppCompatActivity implements IStuLogin<String
         try {
             JSONObject jsonObject = new JSONObject(response);
             /**
-             * 为什么要使用jsonObject.optString， 不使用jsonObject.getString
-             * 因为jsonObject.optString获取null不会报错
+             * 使用jsonObject.optString， 不使用jsonObject.getString
+             * jsonObject.optString获取null不会报错
              */
             String id = jsonObject.optString("ID", null);
             String name = jsonObject.optString("Name", null);
             String tel = jsonObject.optString("Tel", null);
             String sex = jsonObject.optString("Sex", null);
             String password = jsonObject.optString("Password", null);
-            int grade = jsonObject.optInt("grade", 0);
+            int grade = jsonObject.optInt("Grade", 0);
             String college = jsonObject.optString("College", null);
             String major_name = jsonObject.optString("major_name", null);
-            Student user = new Student(id, name, password, tel, sex, grade, college, major_name);
+            String major_id=jsonObject.optString("major_id", null);
+            Student user = new Student(id, name, password, tel, sex, grade, college, major_id);
+            user.setMajor_name(major_name);
             SaveStudentHelper.saveUser(this, "data", "stuuser", user);
             // 日志打印结果：
             Log.d("123546", "analyzeJSON1解析的结果：" + user.toString());

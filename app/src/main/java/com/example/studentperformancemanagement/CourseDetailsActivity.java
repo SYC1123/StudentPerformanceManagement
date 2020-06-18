@@ -38,7 +38,7 @@ public class CourseDetailsActivity extends AppCompatActivity {
     private void bindViews() {
 
         mImage1 = (ImageView) findViewById(R.id.image1);
-        mImage2 = (ImageView) findViewById(R.id.image2);
+//        mImage2 = (ImageView) findViewById(R.id.image2);
         mReservation = (Button) findViewById(R.id.reservation);
         mCoursename = (TextView) findViewById(R.id.coursename);
         mScore = (TextView) findViewById(R.id.score);

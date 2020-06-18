@@ -25,7 +25,7 @@ public class InputGradeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_inputgrade, container, false);
-        initfruit();
+//        initfruit();
         CourseAdapter adapter=new CourseAdapter(getContext(),R.layout.course_item,itemArrayList);
         ListView listView = root.findViewById(R.id.inputlist);
         listView.setAdapter(adapter);
@@ -41,14 +41,14 @@ public class InputGradeFragment extends Fragment {
         return root;
     }
 
-    private void initfruit() {
-        for (int i = 0; i < 10; i++) {
-            Course fruit = new Course("rrr", R.drawable.course, 3);
-            itemArrayList.add(fruit);
-            Course fruit1 = new Course("yyy", R.drawable.course, 4);
-            itemArrayList.add(fruit1);
-            Course fruit2 = new Course("ooo", R.drawable.course, 5);
-            itemArrayList.add(fruit2);
-        }
-    }
+//    private void initfruit() {
+//        for (int i = 0; i < 10; i++) {
+//            Course fruit = new Course("rrr", R.drawable.course, 3);
+//            itemArrayList.add(fruit);
+//            Course fruit1 = new Course("yyy", R.drawable.course, 4);
+//            itemArrayList.add(fruit1);
+//            Course fruit2 = new Course("ooo", R.drawable.course, 5);
+//            itemArrayList.add(fruit2);
+//        }
+//    }
 }

@@ -23,6 +23,7 @@ public class Student implements Serializable {
                 ", student_grade=" + student_grade +
                 ", student_collegename='" + student_collegename + '\'' +
                 ", major_id='" + major_id + '\'' +
+                ", major_name='" + major_name + '\'' +
                 '}';
     }
 
@@ -104,5 +105,14 @@ public class Student implements Serializable {
 
     public String getMajor_id() {
         return major_id;
+    }
+    private String major_name;
+
+    public void setMajor_name(String major_name) {
+        this.major_name = major_name;
+    }
+
+    public String getMajor_name() {
+        return major_name;
     }
 }
