@@ -13,6 +13,19 @@ public class Course implements Serializable {
     private int course_restCapacity;//剩余数量
     private String coure_time;//上课时间
     private String course_grade;//开课学年
+    private String teacher_id;//教师id
+
+    public Course(String course_name, int course_credit, String course_Id, String course_place, int course_capacity, int course_restCapacity, String coure_time, String course_grade, String teacher_id) {
+        this.course_name = course_name;
+        this.course_credit = course_credit;
+        this.course_Id = course_Id;
+        this.course_place = course_place;
+        this.course_capacity = course_capacity;
+        this.course_restCapacity = course_restCapacity;
+        this.coure_time = coure_time;
+        this.course_grade = course_grade;
+        this.teacher_id = teacher_id;
+    }
 
     public Course(String course_name, int course_credit, String course_Id) {
         this.course_name = course_name;
@@ -46,6 +59,14 @@ public class Course implements Serializable {
                 ", course_grade='" + course_grade + '\'' +
                 ", teacher_name='" + teacher_name + '\'' +
                 '}';
+    }
+
+    public String getTeacher_id() {
+        return teacher_id;
+    }
+
+    public void setTeacher_id(String teacher_id) {
+        this.teacher_id = teacher_id;
     }
 
     public String getImageId() {

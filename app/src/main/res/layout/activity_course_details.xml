@@ -30,11 +30,12 @@
 
     <Button
         android:id="@+id/reservation"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="244dp"
+        android:layout_height="45dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="104dp"
         android:layout_marginEnd="8dp"
+        android:background="@android:color/holo_blue_light"
         android:text="选课"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"

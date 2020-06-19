@@ -4,42 +4,44 @@ import android.os.Handler;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.studentperformancemanagement.Interface.IGetTeaCourse;
-import com.example.studentperformancemanagement.Interface.IQueryCourse;
+import com.example.studentperformancemanagement.Interface.IAddCourse;
+import com.example.studentperformancemanagement.Interface.IChangeCourse;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-/*
-* 得到教师授课列表
-* */
-public class GetTeaCourseNetWorkHelper {
+
+public class AddCourseNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 
-    private IGetTeaCourse callback;
+    private IAddCourse callback;
 
-    private Fragment mContent;
+    private AppCompatActivity mContent;
 
-    public GetTeaCourseNetWorkHelper(Fragment appCompatActivity) {
+    public AddCourseNetWorkHelper(AppCompatActivity appCompatActivity) {
         this.mContent = appCompatActivity;
     }
 
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
-            callback.onSucceed(msg.obj.toString());
+            if (msg.obj.equals("1")) {
+                callback.onaddFaild("教师不存在！");
+            } else if (msg.obj.equals("2")) {
+                callback.onaddFaild("课号已经存在！");
+
+            } else {
+                callback.onaddSucceed(msg.obj);
+            }
         }
     };
 
-    public void setCallback(IGetTeaCourse callback) {
-        this.callback = callback;
-    }
-
-    public void startNetThread(final String host, final int port, final String data) {
+    public void startNetThread(final String host, final int port, final String data, IAddCourse myCallback) {
+        this.callback = myCallback;
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -54,7 +56,7 @@ public class GetTeaCourseNetWorkHelper {
                     outputStream.flush();
                     //拿到客户端输入流
                     InputStream is = socket.getInputStream();
-                    byte[] bytes = new byte[2048];
+                    byte[] bytes = new byte[1024];
                     //回应数据
                     int n = is.read(bytes);
                     Message msg = handler.obtainMessage(HANDLER_MSG_TELL_RECV, new String(bytes, 0, n));

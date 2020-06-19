@@ -125,7 +125,9 @@
             android:layout_width="146dp"
             android:layout_height="47dp"
             android:layout_marginBottom="16dp"
+            android:background="@android:color/holo_blue_light"
             android:text="确认"
+            android:textColor="@color/design_default_color_on_primary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

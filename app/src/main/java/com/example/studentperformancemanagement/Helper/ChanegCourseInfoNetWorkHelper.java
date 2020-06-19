@@ -4,42 +4,45 @@ import android.os.Handler;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.studentperformancemanagement.Interface.IGetTeaCourse;
-import com.example.studentperformancemanagement.Interface.IQueryCourse;
+import com.example.studentperformancemanagement.Interface.IChangeCourse;
+import com.example.studentperformancemanagement.Interface.ITeaLogin;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
+
 /*
-* 得到教师授课列表
-* */
-public class GetTeaCourseNetWorkHelper {
+ *
+ * 修改课程信息
+ * */
+public class ChanegCourseInfoNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 
-    private IGetTeaCourse callback;
+    private IChangeCourse callback;
 
-    private Fragment mContent;
+    private AppCompatActivity mContent;
 
-    public GetTeaCourseNetWorkHelper(Fragment appCompatActivity) {
+    public ChanegCourseInfoNetWorkHelper(AppCompatActivity appCompatActivity) {
         this.mContent = appCompatActivity;
     }
 
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
-            callback.onSucceed(msg.obj.toString());
+            if (msg.obj.equals("1")) {
+                callback.onFaild("教师不存在错误！");
+            } else {
+                callback.onSucceed(msg.obj);
+            }
         }
     };
 
-    public void setCallback(IGetTeaCourse callback) {
-        this.callback = callback;
-    }
-
-    public void startNetThread(final String host, final int port, final String data) {
+    public void startNetThread(final String host, final int port, final String data, IChangeCourse myCallback) {
+        this.callback = myCallback;
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -54,7 +57,7 @@ public class GetTeaCourseNetWorkHelper {
                     outputStream.flush();
                     //拿到客户端输入流
                     InputStream is = socket.getInputStream();
-                    byte[] bytes = new byte[2048];
+                    byte[] bytes = new byte[1024];
                     //回应数据
                     int n = is.read(bytes);
                     Message msg = handler.obtainMessage(HANDLER_MSG_TELL_RECV, new String(bytes, 0, n));
