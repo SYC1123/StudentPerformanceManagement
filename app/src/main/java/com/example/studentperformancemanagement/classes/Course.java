@@ -11,7 +11,7 @@ public class Course implements Serializable {
     private String course_place;//上课地点
     private int course_capacity;//课程容量
     private int course_restCapacity;//剩余数量
-    private int coure_time;//学时
+    private String coure_time;//上课时间
     private String course_grade;//开课学年
 
     public Course(String course_name, int course_credit, String course_Id) {
@@ -20,7 +20,7 @@ public class Course implements Serializable {
         this.course_Id = course_Id;
     }
 
-    public Course(String course_name, String imageId, int course_credit, String course_Id, String course_place, int course_capacity, int course_restCapacity, int coure_time) {
+    public Course(String course_name, String imageId, int course_credit, String course_Id, String course_place, int course_capacity, int course_restCapacity, String coure_time) {
         this.course_name = course_name;
         this.imageId = imageId;
         this.course_credit = course_credit;
@@ -92,7 +92,7 @@ public class Course implements Serializable {
         this.course_restCapacity = course_restCapacity;
     }
 
-    public void setCoure_time(int coure_time) {
+    public void setCoure_time(String coure_time) {
         this.coure_time = coure_time;
     }
 
@@ -120,7 +120,7 @@ public class Course implements Serializable {
         return course_restCapacity;
     }
 
-    public int getCoure_time() {
+    public String getCoure_time() {
         return coure_time;
     }
 

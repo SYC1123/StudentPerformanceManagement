@@ -121,4 +121,12 @@ public class CourseDetailsActivity extends AppCompatActivity implements ICheckCh
         setResult(RESULT_OK, intent);
         finish();
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent();
+        intent.putExtra("key", false);
+        setResult(RESULT_OK, intent);
+        super.onBackPressed();
+    }
 }

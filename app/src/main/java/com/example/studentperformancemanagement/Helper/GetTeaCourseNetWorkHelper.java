@@ -4,45 +4,40 @@ import android.os.Handler;
 import android.os.Message;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import com.example.studentperformancemanagement.Interface.IOfficeLogin;
-import com.example.studentperformancemanagement.Interface.IStuLogin;
+import com.example.studentperformancemanagement.Interface.IGetTeaCourse;
+import com.example.studentperformancemanagement.Interface.IQueryCourse;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-/*
- *教务处登录
- *  */
-public class OfficeLoginNetWorkHelper {
+
+public class GetTeaCourseNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 
-    private IOfficeLogin callback;
+    private IGetTeaCourse callback;
 
-    private AppCompatActivity mContent;
+    private Fragment mContent;
 
-    public OfficeLoginNetWorkHelper(AppCompatActivity appCompatActivity) {
+    public GetTeaCourseNetWorkHelper(Fragment appCompatActivity) {
         this.mContent = appCompatActivity;
     }
 
     public Handler handler = new Handler() {
         @Override
         public void handleMessage(@NonNull Message msg) {
-            if (msg.obj.equals("2")) {
-                callback.onofficeFalied("账号或密码错误！");
-            } else if (msg.obj.equals("3")){
-                callback.onofficeFalied("该用户不存在！");
-            }else {
-                callback.onofficeSucceed(msg.obj);
-            }
+            callback.onSucceed(msg.obj.toString());
         }
     };
 
-    public void startNetThread(final String host, final int port, final String data, IOfficeLogin myCallback) {
-        this.callback = myCallback;
+    public void setCallback(IGetTeaCourse callback) {
+        this.callback = callback;
+    }
+
+    public void startNetThread(final String host, final int port, final String data) {
         Thread thread = new Thread() {
             @Override
             public void run() {
@@ -57,7 +52,7 @@ public class OfficeLoginNetWorkHelper {
                     outputStream.flush();
                     //拿到客户端输入流
                     InputStream is = socket.getInputStream();
-                    byte[] bytes = new byte[1024];
+                    byte[] bytes = new byte[2048];
                     //回应数据
                     int n = is.read(bytes);
                     Message msg = handler.obtainMessage(HANDLER_MSG_TELL_RECV, new String(bytes, 0, n));

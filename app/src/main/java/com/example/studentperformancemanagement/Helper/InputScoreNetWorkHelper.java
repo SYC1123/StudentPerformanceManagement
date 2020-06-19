@@ -14,7 +14,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
+/*
+ * 录入成绩
+ * */
 public class InputScoreNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 

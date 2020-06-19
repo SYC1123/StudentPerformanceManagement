@@ -14,7 +14,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
+/*
+ *教师得到自己教的课程
+ *  */
 public class GetTeachCourseNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 
@@ -52,7 +54,7 @@ public class GetTeachCourseNetWorkHelper {
                     outputStream.flush();
                     //拿到客户端输入流
                     InputStream is = socket.getInputStream();
-                    byte[] bytes = new byte[1024];
+                    byte[] bytes = new byte[2048];
                     //回应数据
                     int n = is.read(bytes);
                     Message msg = handler.obtainMessage(HANDLER_MSG_TELL_RECV, new String(bytes, 0, n));

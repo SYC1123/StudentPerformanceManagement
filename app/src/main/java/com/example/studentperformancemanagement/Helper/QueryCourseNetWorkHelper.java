@@ -14,7 +14,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
+/*
+ *学生查询可选课程
+ *  */
 public class QueryCourseNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 

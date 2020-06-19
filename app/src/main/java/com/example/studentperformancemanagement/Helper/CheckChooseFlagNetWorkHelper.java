@@ -13,7 +13,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
+/*
+* 检查可否选课
+* */
 public class CheckChooseFlagNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 

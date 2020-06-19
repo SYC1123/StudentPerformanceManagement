@@ -14,7 +14,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
+/*
+ * 教师得到自己教的学生
+ * */
 public class GetTeachStuNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 

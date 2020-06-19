@@ -45,7 +45,7 @@ public class StuCourseFragment extends Fragment implements IQueryCourse<String> 
         queryCourseNetWorkHelper = new QueryCourseNetWorkHelper(this);
         queryCourseNetWorkHelper.setCallback(this);
         student= SaveStudentHelper.getUser(getContext(),"data","stuuser");
-        Log.d("2222222", "onCreateView: "+student.toString());
+//        Log.d("2222222", "onCreateView: "+student.toString());
         queryCourseNetWorkHelper.startNetThread(Constant.IPADDRESS, Constant.PORT, "query_course:" + (student.getStudent_grade()+1) + "&" +student.getMajor_id());
         listView = root.findViewById(R.id.courselist);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -80,6 +80,7 @@ public class StuCourseFragment extends Fragment implements IQueryCourse<String> 
     @Override
     public void onSucceed(String res) {
         itemArrayList.clear();
+        Log.d("123456", "onSucceed: " + res.toString());
         try {
             JSONArray jsonArray = new JSONArray(res);
             for (int i = 0; i < jsonArray.length(); i++) {
@@ -93,13 +94,14 @@ public class StuCourseFragment extends Fragment implements IQueryCourse<String> 
                 int restcapacity=jsonObject.optInt("Course_restcapacity",0);
                 String time=jsonObject.optString("Course_Time",null);
                 String tracher=jsonObject.optString("Teacher_name",null);
-                Course course = new Course(course_name,course_photo,course_credit,course_id,course_place,capacity,restcapacity,Integer.parseInt(time));
+                Course course = new Course(course_name,course_photo,course_credit,course_id,course_place,capacity,restcapacity,time);
                 course.setTeacher_name(tracher);
                 itemArrayList.add(course);
             }
              adapter = new CourseAdapter(getContext(), R.layout.course_item, itemArrayList);
             listView.setAdapter(adapter);
         } catch (Exception e) {
+            Log.d("1231", "onSucceed: "+e.getMessage());
             e.printStackTrace();
         }
     }

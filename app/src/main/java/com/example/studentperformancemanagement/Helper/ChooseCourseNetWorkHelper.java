@@ -13,7 +13,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
+/*
+ * 选课
+ * */
 public class ChooseCourseNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 

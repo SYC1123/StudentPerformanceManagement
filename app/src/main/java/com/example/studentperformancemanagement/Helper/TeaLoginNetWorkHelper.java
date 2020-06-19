@@ -14,7 +14,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
-
+/*
+ *教师登录
+ *  */
 public class TeaLoginNetWorkHelper {
     private static final int HANDLER_MSG_TELL_RECV = 1;
 
