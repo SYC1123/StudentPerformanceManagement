@@ -14,13 +14,13 @@ public class Course implements Serializable {
     private int coure_time;//学时
     private String course_grade;//开课学年
 
-    public Course(String course_name, String imageId, int course_credit) {
-        this.imageId = imageId;
+    public Course(String course_name, int course_credit, String course_Id) {
         this.course_name = course_name;
         this.course_credit = course_credit;
+        this.course_Id = course_Id;
     }
 
-    public Course(String course_name, String imageId,  int course_credit, String course_Id, String course_place, int course_capacity, int course_restCapacity, int coure_time) {
+    public Course(String course_name, String imageId, int course_credit, String course_Id, String course_place, int course_capacity, int course_restCapacity, int coure_time) {
         this.course_name = course_name;
         this.imageId = imageId;
         this.course_credit = course_credit;
@@ -29,6 +29,23 @@ public class Course implements Serializable {
         this.course_capacity = course_capacity;
         this.course_restCapacity = course_restCapacity;
         this.coure_time = coure_time;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "course_name='" + course_name + '\'' +
+                ", imageId='" + imageId + '\'' +
+                ", course_nature='" + course_nature + '\'' +
+                ", course_credit=" + course_credit +
+                ", course_Id='" + course_Id + '\'' +
+                ", course_place='" + course_place + '\'' +
+                ", course_capacity=" + course_capacity +
+                ", course_restCapacity=" + course_restCapacity +
+                ", coure_time=" + coure_time +
+                ", course_grade='" + course_grade + '\'' +
+                ", teacher_name='" + teacher_name + '\'' +
+                '}';
     }
 
     public String getImageId() {

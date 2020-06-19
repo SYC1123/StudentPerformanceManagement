@@ -47,7 +47,7 @@ public class StuInfoFragment extends Fragment {
         mStuname.setText(student.getStudent_name());
         mCollege.setText(student.getStudent_collegename());
         mSex.setText(student.getStudent_sex());
-        mMajor.setText(student.getMajor_id());
+        mMajor.setText(student.getMajor_name());
         mTel.setText(student.getStudent_tel());
         mSet.setOnClickListener(new View.OnClickListener() {
             @Override

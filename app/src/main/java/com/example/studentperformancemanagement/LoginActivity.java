@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity implements IStuLogin<String
 
     @Override
     public void onSucceed(String response) {
-        Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "学生登录成功", Toast.LENGTH_SHORT).show();
         SaveStudentHelper.saveIslogin(this, "data", "stuislogin");
 
         Log.d("123456", "onSucceed: " + response);
@@ -159,7 +159,7 @@ public class LoginActivity extends AppCompatActivity implements IStuLogin<String
 
     @Override
     public void onofficeSucceed(String response) {
-        Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "教务处登录成功", Toast.LENGTH_SHORT).show();
         SaveOfficeHelper.saveIslogin(this, "data", "officeislogin");
 
         Log.d("123456", "onSucceed: " + response);
@@ -192,7 +192,7 @@ public class LoginActivity extends AppCompatActivity implements IStuLogin<String
 
     @Override
     public void onteaSucceed(String response) {
-        Toast.makeText(this, "登录成功", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "教师登录成功", Toast.LENGTH_SHORT).show();
         SaveTeacherHelper.saveIslogin(this, "data", "teaislogin");
 
         Log.d("123456", "onSucceed: " + response);
@@ -209,7 +209,9 @@ public class LoginActivity extends AppCompatActivity implements IStuLogin<String
             String name = jsonObject.optString("Name", null);
             String tel = jsonObject.optString("Tel", null);
             String sex = jsonObject.optString("Sex", null);
-            Teacher user = new Teacher(id, name, password, tel, sex, college, major_name);
+            String major_id=jsonObject.optString("major_id");
+            Teacher user = new Teacher(id, name, password, tel, sex, college, major_id);
+            user.setMajor_name(major_name);
             SaveTeacherHelper.saveUser(this, "data", "teauser", user);
             // 日志打印结果：
             Log.d("123546", "analyzeJSON1解析的结果：" + user.toString());

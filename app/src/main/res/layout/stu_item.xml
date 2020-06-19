@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView12" />
 
     <TextView
-        android:id="@+id/stuid"
+        android:id="@+id/student_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -51,7 +51,7 @@
         android:layout_marginBottom="8dp"
         android:text="成绩录入"
         android:textColor="@android:color/holo_orange_light"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

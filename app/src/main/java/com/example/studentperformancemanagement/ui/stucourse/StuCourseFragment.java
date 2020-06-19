@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.studentperformancemanagement.CourseDetailsActivity;
@@ -35,7 +36,8 @@ public class StuCourseFragment extends Fragment implements IQueryCourse<String> 
     private ListView listView;
     private QueryCourseNetWorkHelper queryCourseNetWorkHelper;
     private Student student;
-
+    private int pos;
+    private CourseAdapter adapter;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -50,24 +52,30 @@ public class StuCourseFragment extends Fragment implements IQueryCourse<String> 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Course course = itemArrayList.get(position);
+                pos=position;
                 Intent intent = new Intent(getContext(), CourseDetailsActivity.class);
-                intent.putExtra("name", course.getCourse_name());
-                startActivity(intent);
+                intent.putExtra("course", course);
+                startActivityForResult(intent,1);
             }
         });
         return root;
     }
 
-//    private void initfruit() {
-//        for (int i = 0; i < 10; i++) {
-//            Course fruit = new Course("aaa", R.drawable.course, 3);
-//            itemArrayList.add(fruit);
-//            Course fruit1 = new Course("bbb", R.drawable.course, 4);
-//            itemArrayList.add(fruit1);
-//            Course fruit2 = new Course("ccc", R.drawable.course, 5);
-//            itemArrayList.add(fruit2);
-//        }
-//    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        switch (requestCode) {
+            case 1:
+                Boolean value = data.getBooleanExtra("key",false);
+                if(value){//选了
+                    itemArrayList.remove(pos);
+                    adapter.notifyDataSetChanged();
+                }
+//                Log.e("MainActivity", value);
+                break;
+            default:
+        }
+
+    }
 
     @Override
     public void onSucceed(String res) {
@@ -86,9 +94,10 @@ public class StuCourseFragment extends Fragment implements IQueryCourse<String> 
                 String time=jsonObject.optString("Course_Time",null);
                 String tracher=jsonObject.optString("Teacher_name",null);
                 Course course = new Course(course_name,course_photo,course_credit,course_id,course_place,capacity,restcapacity,Integer.parseInt(time));
+                course.setTeacher_name(tracher);
                 itemArrayList.add(course);
             }
-            CourseAdapter adapter = new CourseAdapter(getContext(), R.layout.course_item, itemArrayList);
+             adapter = new CourseAdapter(getContext(), R.layout.course_item, itemArrayList);
             listView.setAdapter(adapter);
         } catch (Exception e) {
             e.printStackTrace();

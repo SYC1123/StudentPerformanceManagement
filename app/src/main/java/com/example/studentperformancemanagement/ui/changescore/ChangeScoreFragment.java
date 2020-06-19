@@ -23,7 +23,7 @@ public class ChangeScoreFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflater.inflate(R.layout.fragment_changescore, container, false);
-        mStuid = (EditText) root.findViewById(R.id.stuid);
+        mStuid = (EditText) root.findViewById(R.id.student_id);
         mCourseid = (EditText) root.findViewById(R.id.courseid);
         mScore = (EditText) root.findViewById(R.id.score);
         mSure = (Button) root.findViewById(R.id.sure);

@@ -47,7 +47,7 @@ public class TeaInfoFragment extends Fragment {
         mTeasex.setText(teacher.getTeacher_sex());
         mTeaid.setText(teacher.getTeacher_id());
         mTeacollege.setText(teacher.getTeacher_collegename());
-        mTeamajor.setText(teacher.getMajor_id());
+        mTeamajor.setText(teacher.getMajor_name());
         mTel.setText(teacher.getTeacher_tel());
         mSet.setOnClickListener(new View.OnClickListener() {
             @Override

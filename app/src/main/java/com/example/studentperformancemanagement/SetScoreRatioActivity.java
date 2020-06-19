@@ -10,6 +10,9 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.studentperformancemanagement.classes.Course;
+import com.example.studentperformancemanagement.classes.GradeRatio;
+
 public class SetScoreRatioActivity extends AppCompatActivity {
     private Button mSure;
     private EditText mUsual_ratio;
@@ -22,6 +25,8 @@ public class SetScoreRatioActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_score_ratio);
         bindViews();
+        Intent intent=getIntent();
+        final Course course= (Course) intent.getSerializableExtra("course");
         mSure.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -33,6 +38,9 @@ public class SetScoreRatioActivity extends AppCompatActivity {
                     Toast.makeText(SetScoreRatioActivity.this, "请输入正确的成绩比例", Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent=new Intent(SetScoreRatioActivity.this,InputScoreActivity.class);
+                    GradeRatio gradeRatio=new GradeRatio(usual/100,exp/100,mid/100,fina/100);
+                    intent.putExtra("ratio",gradeRatio);
+                    intent.putExtra("course",course);
                     startActivity(intent);
                 }
             }

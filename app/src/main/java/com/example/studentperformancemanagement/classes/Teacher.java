@@ -11,6 +11,20 @@ public class Teacher implements Serializable {
     private String teacher_collegename;//学院
     private String major_id;//专业号
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "teacher_id='" + teacher_id + '\'' +
+                ", teacher_name='" + teacher_name + '\'' +
+                ", teacher_password='" + teacher_password + '\'' +
+                ", teacher_tel='" + teacher_tel + '\'' +
+                ", teacher_sex='" + teacher_sex + '\'' +
+                ", teacher_collegename='" + teacher_collegename + '\'' +
+                ", major_id='" + major_id + '\'' +
+                ", major_name='" + major_name + '\'' +
+                '}';
+    }
+
     public Teacher(String teacher_id, String teacher_name, String teacher_password, String teacher_tel, String teacher_sex, String teacher_collegename, String major_id) {
         this.teacher_id = teacher_id;
         this.teacher_name = teacher_name;
@@ -75,5 +89,14 @@ public class Teacher implements Serializable {
 
     public String getMajor_id() {
         return major_id;
+    }
+    private String major_name;
+
+    public String getMajor_name() {
+        return major_name;
+    }
+
+    public void setMajor_name(String major_name) {
+        this.major_name = major_name;
     }
 }

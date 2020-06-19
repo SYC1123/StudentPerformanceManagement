@@ -1,6 +1,7 @@
 package com.example.studentperformancemanagement.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,9 +31,8 @@ public class StuAdapter extends ArrayAdapter<Student> {
             view = convertView;
         }
 
-        TextView stuid = view.findViewById(R.id.stuid);
+        TextView stuid = view.findViewById(R.id.student_id);
         TextView stuname=view.findViewById(R.id.stuname);
-
         stuid.setText(item.getStudent_id());
         stuname.setText(item.getStudent_name());
         return view;
