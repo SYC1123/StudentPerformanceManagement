@@ -12,6 +12,16 @@ public class GradeRatio implements Serializable {
         this.fina = fina;
     }
 
+    @Override
+    public String toString() {
+        return "GradeRatio{" +
+                "usual=" + usual +
+                ", exp=" + exp +
+                ", mid=" + mid +
+                ", fina=" + fina +
+                '}';
+    }
+
     public double getUsual() {
         return usual;
     }

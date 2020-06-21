@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +39,8 @@ public class SetScoreRatioActivity extends AppCompatActivity {
                     Toast.makeText(SetScoreRatioActivity.this, "请输入正确的成绩比例", Toast.LENGTH_SHORT).show();
                 }else {
                     Intent intent=new Intent(SetScoreRatioActivity.this,InputScoreActivity.class);
-                    GradeRatio gradeRatio=new GradeRatio(usual/100,exp/100,mid/100,fina/100);
+                    GradeRatio gradeRatio=new GradeRatio((float)usual/100,(float)exp/100,(float)mid/100,(float)fina/100);
+                    Log.d("asdfgh", gradeRatio.toString()+"setnS: "+usual+exp+mid+fina);
                     intent.putExtra("ratio",gradeRatio);
                     intent.putExtra("course",course);
                     startActivity(intent);

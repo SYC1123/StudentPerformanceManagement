@@ -30,23 +30,25 @@ public class InputScoreActivity extends AppCompatActivity implements IGetTeachSt
     private ListView listView;
     private GradeRatio gradeRatio;
     private Course course;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_score);
         getTeachStuNetWorkHelper = new GetTeachStuNetWorkHelper(this);
         Intent intent = getIntent();
-          gradeRatio = (GradeRatio) intent.getSerializableExtra("ratio");
-          course = (Course) intent.getSerializableExtra("course");
+        gradeRatio = (GradeRatio) intent.getSerializableExtra("ratio");
+        Log.d("asdfgh", gradeRatio.toString()+"InS: ");
+        course = (Course) intent.getSerializableExtra("course");
         listView = findViewById(R.id.stulist);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Student student = itemArrayList.get(position);
                 Intent intent = new Intent(InputScoreActivity.this, InputStuScoreActivity.class);
-                intent.putExtra("stu_id",student.getStudent_id());
-                intent.putExtra("course_id",course.getCourse_Id());
-                intent.putExtra("ratio",gradeRatio);
+                intent.putExtra("stu_id", student.getStudent_id());
+                intent.putExtra("course_id", course.getCourse_Id());
+                intent.putExtra("ratio", gradeRatio);
                 startActivity(intent);
             }
         });
@@ -67,7 +69,7 @@ public class InputScoreActivity extends AppCompatActivity implements IGetTeachSt
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String stu_name = jsonObject.optString("Stu_Name", null);
                 String stu_id = jsonObject.optString("Stu_ID", null);
-                Log.d("1234567", "onSucceed: "+stu_id);
+                Log.d("1234567", "onSucceed: " + stu_id);
                 Student student = new Student(stu_id, stu_name);
                 itemArrayList.add(student);
             }

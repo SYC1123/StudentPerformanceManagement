@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,8 @@ import com.example.studentperformancemanagement.Helper.Constant;
 import com.example.studentperformancemanagement.Helper.InputScoreNetWorkHelper;
 import com.example.studentperformancemanagement.Interface.IInputScore;
 import com.example.studentperformancemanagement.classes.GradeRatio;
+
+import java.text.DecimalFormat;
 
 public class InputStuScoreActivity extends AppCompatActivity implements IInputScore<String> {
     private EditText mUsual;
@@ -43,7 +46,10 @@ public class InputStuScoreActivity extends AppCompatActivity implements IInputSc
                     double mid=Double.parseDouble(mMid.getText().toString())*ratio.getMid();
                     double fina=Double.parseDouble(mFina.getText().toString())*ratio.getFina();
                     double grade=usual+exp+mid+fina;
-                    inputScoreNetWorkHelper.startNetThread(Constant.IPADDRESS, Constant.PORT,"input_score:"+stu_id+"&"+course_id+"&"+grade,InputStuScoreActivity.this);
+                    DecimalFormat df   = new DecimalFormat("######0.0");
+
+                    Log.d("asdfgh", ratio.toString()+"onClick: "+usual+exp+mid+fina+grade);
+                    inputScoreNetWorkHelper.startNetThread(Constant.IPADDRESS, Constant.PORT,"input_score:"+stu_id+"&"+course_id+"&"+df.format(grade),InputStuScoreActivity.this);
                 }
             }
         });
